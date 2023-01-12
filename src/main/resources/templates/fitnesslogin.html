@@ -18,10 +18,10 @@
         <p class="title">Welcome Back !</p>
         <p class="description">please enter your details.</p>
         <img src="/Images/register.jpg" alt="login">
-        <form action="none" method="post">
+        <form th:action="@{/login}" method="post">
             <div class="mb-3">
-                <label for="email" class="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="emailname@example.com">
+                <label for="email" class="email">Username</label>
+                <input type="text" class="form-control" name="username" id="email" placeholder="Username">
             </div>
             <div class="mb-3">
                 <label for="password" class="password">Password</label>
@@ -40,6 +40,6 @@
             </table>
             <button type="submit" id="submit">Sign In</button>
         </form>
-        <p class="signUp">Dont have an account? <u><b>Sign Up</b></u></p>
+        <a href="register"><p class="signUp">Dont have an account? <u><b>Sign Up</b></u></p></a>
     </body>
 </html>
