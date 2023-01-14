@@ -25,13 +25,21 @@ public class AdminDOA {
             statement.setString(1, username);
             statement.setString(2, password);
 
-            ResultSet resultSet = statement.executeQuery();
+            ResultSet rs = statement.executeQuery();
 
-            if (resultSet.next()) {
+            if (rs.next()) {
                 admin = new Admin();
-                admin.setUsername(resultSet.getString("username"));
-                admin.setFirstName(resultSet.getString("first_name"));
-                admin.setLastName(resultSet.getString("last_name"));
+                admin.setId(rs.getInt("id"));
+                admin.setAdminUsername(rs.getString("username"));
+                admin.setAdminPass(rs.getString("password"));
+                admin.setFirstName(rs.getString("firstname"));
+                admin.setLastName(rs.getString("lastname"));
+                admin.setAddress(rs.getString("address"));
+                admin.setCity(rs.getString("city"));
+                admin.setState(rs.getString("state"));
+                admin.setZip(rs.getString("zip"));
+                admin.setPhone(rs.getString("phone"));
+                admin.setEmail(rs.getString("email"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

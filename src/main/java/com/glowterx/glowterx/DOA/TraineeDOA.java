@@ -25,13 +25,21 @@ public class TraineeDOA {
             statement.setString(1, username);
             statement.setString(2, password);
 
-            ResultSet resultSet = statement.executeQuery();
+            ResultSet rs = statement.executeQuery();
 
-            if (resultSet.next()) {
+            if (rs.next()) {
                 trainee = new Trainee();
-                trainee.setUsername(resultSet.getString("username"));
-                trainee.setFirstName(resultSet.getString("first_name"));
-                trainee.setLastName(resultSet.getString("last_name"));
+                trainee.setId(rs.getInt("id"));
+                trainee.setTraineeUsername(rs.getString("username"));
+                trainee.setTraineePass(rs.getString("password"));
+                trainee.setFirstName(rs.getString("firstname"));
+                trainee.setLastName(rs.getString("lastname"));
+                trainee.setAddress(rs.getString("address"));
+                trainee.setCity(rs.getString("city"));
+                trainee.setState(rs.getString("state"));
+                trainee.setZip(rs.getString("zip"));
+                trainee.setPhone(rs.getString("phone"));
+                trainee.setEmail(rs.getString("email"));
             }
 
         } catch (SQLException e) {

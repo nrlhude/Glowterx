@@ -25,13 +25,21 @@ public class InstructorDOA {
             statement.setString(1, username);
             statement.setString(2, password);
 
-            ResultSet resultSet = statement.executeQuery();
+            ResultSet rs = statement.executeQuery();
 
-            if (resultSet.next()) {
+            if (rs.next()) {
                 instructor = new Instructor();
-                instructor.setUsername(resultSet.getString("username"));
-                instructor.setFirstName(resultSet.getString("first_name"));
-                instructor.setLastName(resultSet.getString("last_name"));
+                instructor.setId(rs.getInt("id"));
+                instructor.setInstructorUsername(rs.getString("username"));
+                instructor.setInstructorPass(rs.getString("password"));
+                instructor.setFirstName(rs.getString("firstname"));
+                instructor.setLastName(rs.getString("lastname"));
+                instructor.setAddress(rs.getString("address"));
+                instructor.setCity(rs.getString("city"));
+                instructor.setState(rs.getString("state"));
+                instructor.setZip(rs.getString("zip"));
+                instructor.setPhone(rs.getString("phone"));
+                instructor.setEmail(rs.getString("email"));
             }
 
         } catch (SQLException e) {
