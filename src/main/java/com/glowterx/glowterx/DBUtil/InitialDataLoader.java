@@ -111,5 +111,6 @@ public class InitialDataLoader {
     @EventListener
     public void onApplicationEvent(ContextRefreshedEvent event) {
         createTables();
+        // loadInitialData(); //First time run should uncomment this line
     }
 }

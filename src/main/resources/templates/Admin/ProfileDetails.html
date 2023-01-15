@@ -83,7 +83,7 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="profile-info-left">
-                                            <h3 class="user-name m-t-0 mb-0"><b>Ieskandar Zulqarnain</b></h3>
+                                            <h3 class="user-name m-t-0 mb-0"><b th:text="*{firstName} + ' ' + *{lastName}"></b></h3>
                                             <small class="text-muted">Admin</small>
                                             <div class="user-id">Username : <p th:text="*{AdminUsername}"></div>
                                         </div>
@@ -92,20 +92,19 @@
                                         <ul class="personal-info">
                                             <li>
                                                 <span class="title">Phone:</span>
-                                                <span class="text">014-9161793</span>
+                                                <span class="text" th:text="*{phone}"></span>
                                             </li>
                                             <li>
                                                 <span class="title">Email:</span>
-                                                <span class="text">[email&#160;protected]</span>
+                                                <span class="text" th:text="*{email}"></span>
                                                 </span>
                                             </li>
                                             <li>
-                                                <span class="title">Birthday:</span>
-                                                <span class="text">3rd March</span>
-                                            </li>
-                                            <li>
                                                 <span class="title">Address:</span>
-                                                <span class="text">714 Burwell Heights Road, Bridge City, TX, 77611</span>
+                                                <span class="text" th:text="*{address}"></span>
+                                                <span class="text" th:text="*{city}"></span>
+                                                <span class="text" th:text="*{zip}"></span>
+                                                <span class="text" th:text="*{state}"></span>
                                             </li>
                                             <li>
                                                 <span class="title">Gender:</span>
